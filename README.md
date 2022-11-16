@@ -1,6 +1,10 @@
 ## references:
 
 https://pokeapi.co/
+https://pokeapi.co/docs/v2
+https://pokeapi.co/docs/v2#pokemon
+
+this last one for pokemons images, refer to sprites > other > dream_world
 
 ## Inspiration
 
