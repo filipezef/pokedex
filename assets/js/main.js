@@ -1,8 +1,6 @@
 function convertPokemonToLi(pokemon) {
-  pokemon.name = pokemon.name[0].toUpperCase() + pokemon.name.substring(1)
-
   return `
-  <li class="pokemon">
+  <li class="pokemon ${pokemon.type}">
     <span class="number">#${
       (pokemon.number < 10 ? '00' : '0') + String(pokemon.number)
     }</span>
@@ -10,7 +8,9 @@ function convertPokemonToLi(pokemon) {
 
     <div class="detail">
       <ol class="types">
-        ${pokemon.types.map(type => `<li class="type">${type}</li>`).join('')}
+        ${pokemon.types
+          .map(type => `<li class="type ${pokemon.type}">${type}</li>`)
+          .join('')}
       </ol>
       <img
         class="pokemonImage"
