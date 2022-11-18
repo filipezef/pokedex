@@ -1,12 +1,6 @@
-// function convertPokemonTypesToLi(pokemonTypes) {
-//   return pokemonTypes
-//     .map(typeSlot => `<li class="type">${typeSlot.type.name}</li>`)
-//     .join('')
-// }
-
 function convertPokemonToLi(pokemon) {
   pokemon.name = pokemon.name[0].toUpperCase() + pokemon.name.substring(1)
-  //console.log(pokemon.types.get(1))
+
   return `
   <li class="pokemon">
     <span class="number">#${
@@ -16,7 +10,6 @@ function convertPokemonToLi(pokemon) {
 
     <div class="detail">
       <ol class="types">
-        <!-- the array types has only the types names as property, refer to pokemon model -->
         ${pokemon.types.map(type => `<li class="type">${type}</li>`).join('')}
       </ol>
       <img
