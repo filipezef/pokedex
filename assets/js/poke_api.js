@@ -5,7 +5,7 @@ function convertPokeApiDetailToPokemon(pokeDetail) {
   const [type] = types
 
   pokemon.name = pokeDetail.name
-  pokemon.number = pokeDetail.order
+  pokemon.number = pokeDetail.id
   pokemon.types = types
   pokemon.type = type
   pokemon.image = pokeDetail.sprites.other.dream_world.front_default
