@@ -4,6 +4,11 @@ let offset = 0
 const limit = 50
 const maxRecords = 151 // number of first generation pokemons
 
+// remove pagination button once pokemon limit is reached
+const divBtn = document.getElementById('pagination')
+const div = document.createElement('div')
+div.innerHTML = '<small>offset is out of range</small>'
+
 // to adjust pokemon order number to 3 digits
 function adjustPokemonOrder(order) {
   if (order < 10) {
@@ -49,10 +54,6 @@ function loadMorePokemons(offset, limit) {
 }
 
 loadMorePokemons(offset, limit)
-
-const divBtn = document.getElementById('pagination')
-const div = document.createElement('div')
-div.innerHTML = '<small>offset is out of range</small>'
 
 loadMoreButton.addEventListener('click', () => {
   offset += limit
