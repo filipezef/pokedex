@@ -1,7 +1,8 @@
 const pokemonList = document.getElementById('pokemonList')
 const loadMoreButton = document.getElementById('loadMoreButton')
 let offset = 0
-const limit = 5
+const limit = 50
+const maxRecords = 151 // number of first generation pokemons
 
 // to adjust pokemon order number to 3 digits
 function adjustPokemonOrder(order) {
@@ -49,20 +50,35 @@ function loadMorePokemons(offset, limit) {
 
 loadMorePokemons(offset, limit)
 
-const div = document.createElement('div')
-div.innerText = 'offset is out of range'
-const body = document.querySelector('body')
 const divBtn = document.getElementById('pagination')
+const div = document.createElement('div')
+div.innerHTML = '<small>offset is out of range</small>'
 
 loadMoreButton.addEventListener('click', () => {
   offset += limit
-  console.log(offset)
+  const qttRecordsNextPage = offset + limit
   // to limit offset to the number of 1st generation pokemons (151)
-  if (offset < 15) {
-    loadMorePokemons(offset, limit)
-  } else {
-    console.log('offset is out of range')
+
+  // method 1: first conditional based on qttRecordsNextPage <= maxRecords
+  // if (qttRecordsNextPage <= maxRecords) {
+  //   loadMorePokemons(offset, limit)
+  // } else if (maxRecords - offset == 0) {
+  //   divBtn.insertBefore(div, loadMoreButton)
+  //   loadMoreButton.remove()
+  // } else {
+  //   const newLimit = maxRecords - offset
+  //   loadMorePokemons(offset, newLimit)
+  //   divBtn.insertBefore(div, loadMoreButton)
+  //   loadMoreButton.remove()
+  // }
+
+  if (qttRecordsNextPage >= maxRecords) {
+    const newLimit = maxRecords - offset
+
+    loadMorePokemons(offset, newLimit)
     divBtn.insertBefore(div, loadMoreButton)
     loadMoreButton.remove()
+  } else {
+    loadMorePokemons(offset, limit)
   }
 })
