@@ -59,19 +59,6 @@ loadMoreButton.addEventListener('click', () => {
   const qttRecordsNextPage = offset + limit
   // to limit offset to the number of 1st generation pokemons (151)
 
-  // method 1: first conditional based on qttRecordsNextPage <= maxRecords
-  // if (qttRecordsNextPage <= maxRecords) {
-  //   loadMorePokemons(offset, limit)
-  // } else if (maxRecords - offset == 0) {
-  //   divBtn.insertBefore(div, loadMoreButton)
-  //   loadMoreButton.remove()
-  // } else {
-  //   const newLimit = maxRecords - offset
-  //   loadMorePokemons(offset, newLimit)
-  //   divBtn.insertBefore(div, loadMoreButton)
-  //   loadMoreButton.remove()
-  // }
-
   if (qttRecordsNextPage >= maxRecords) {
     const newLimit = maxRecords - offset
 
