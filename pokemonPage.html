@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Normalize CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Font Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS refs -->
+    <link rel="stylesheet" href="./assets/css/global.css" />
+    <link rel="stylesheet" href="./assets/css/pokedex.css" />
+    <link rel="stylesheet" href="./assets/css/pokemonPage.css" />
+
+    <title>Pokemon Page</title>
+  </head>
+  <body>
+    <section class="contentPokemonPage grass">
+      <div class="pokemon">
+        <h1 class="pokemonPageName">${pokemon.name}</h1>
+        <!-- <span class="name">${pokemon.name}</span> -->
+        <span class="pokemonPageNumber">#${pokemon.number}</span>
+
+        <ol class="pokemonPageTypes">
+          <li class="pokemonPageType grass">${type}</li>
+          <li class="pokemonPageType grass">${type2}</li>
+        </ol>
+      </div>
+
+      <div class="pokemonInformation">
+        <h4>About</h4>
+        <table>
+          <tbody>
+            <tr>
+              <td class="column1">#${Species}</td>
+              <td class="column2">#${Species}</td>
+            </tr>
+            <tr>
+              <td class="column1">#${Height}</td>
+              <td class="column2">#${Height}</td>
+            </tr>
+            <tr>
+              <td class="column1">#${Weight}</td>
+              <td class="column2">#${Weight}</td>
+            </tr>
+            <tr>
+              <td class="column1">#${Abilities}</td>
+              <td class="column2">#${Abilities}</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Breeding</h3>
+
+        <table>
+          <tbody>
+            <tr>
+              <td class="column1">#${Gender}</td>
+              <td class="column2">#${Gender}</td>
+            </tr>
+            <tr>
+              <td class="column1">#${Egg Groups}</td>
+              <td class="column2">#${Egg Groups}</td>
+            </tr>
+            <tr>
+              <td class="column1">#${Egg Cycle}</td>
+              <td class="column2">#${Egg Cycle}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="pokemonPageImage">
+        <img
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg"
+          alt="${pokemon.name}"
+        />
+      </div>
+    </section>
+
+    <!-- Nosso JS -->
+    <script src="assets/js/pokemon-model.js"></script>
+    <script src="assets/js/poke-api.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
